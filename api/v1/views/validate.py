@@ -5,11 +5,16 @@ that handles all default RestFull API actions"""
 from api.v1.views import app_views
 from flask import jsonify, abort, request
 import requests
+import sys
+
+this = sys.modules[__name__]
+
+this.__CONECTIONS__ = []
 
 @app_views.route("/validate/<username>", methods=['GET'])
 def validate_username(username):
     "validate the user name and save the publicId to conections"
-    conections = []
+    this.__CONECTIONS__.clear()
     url = 'https://bio.torre.co/api/people/{}/connections'.format(username)
     res = requests.get(url).json()
 
@@ -23,9 +28,9 @@ def validate_username(username):
                 "name": conect['person']['name'],
                 "publicId": conect['person']['publicId']
             }
-            conections.append(info_conect)
+            __CONECTIONS__.append(info_conect)
         info = {
             "username": bio_res['person']['name'],
-            "conetions": conections
+            "conections": __CONECTIONS__
             }
         return jsonify(info), 200

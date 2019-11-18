@@ -9,3 +9,5 @@ app_views = Blueprint("mold", __name__, url_prefix='/api/v1')
 
 from api.v1.views.index import *
 from api.v1.views.validate import *
+from api.v1.views.language import *
+from api.v1.views.education import *
