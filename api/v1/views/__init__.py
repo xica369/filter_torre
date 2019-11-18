@@ -11,3 +11,4 @@ from api.v1.views.index import *
 from api.v1.views.validate import *
 from api.v1.views.language import *
 from api.v1.views.education import *
+from api.v1.views.strength import *
