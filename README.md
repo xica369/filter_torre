@@ -15,11 +15,11 @@ with the second route information about the user's contacts was obtained
 
 How to use
 
-You can visit the app with this link: xica.tech:5000/api/v1/ + endpoint
+You can visit the app with this link: xica.tech/api/v1/ + endpoint
 
 Endpoints
 
-There are  endpoints:
+There are 8 endpoints and it is always necessary to start with the validate to start the CONNETIONS list:
 1. /status -> return the status of the api
 
 2. /validate/$publicId -> initialize the CONNECTIONS list and return a list with the contacts, their name and publicId
@@ -36,3 +36,20 @@ There are  endpoints:
 8. /clear -> clean the CONNECTIONS list
 
 
+Or clone this repository and run in local:
+
+You have to get installed python 3.4 at least:
+
+$ sudo apt-get update
+$ sudo apt-get install python3.4
+
+Run this command to install the requirements:
+
+$ pip3 install -r requirements.txt
+
+Then, you can run locally as developing enviroment with:
+
+API_PORT=5000 API_HOST=0.0.0.0 python3 -m api.v1.app
+
+In the browser you can consume the API with the following route:
+http://localhost:5000/api/v1/ + endpoint as explained above
