@@ -15,9 +15,9 @@ with the second route information about the user's contacts was obtained
 
 How to use
 
-You can visit the app with this link: xica.tech/api/v1/ + endpoint
+You can visit the app with this link: xica.tech/api/v1/ + route
 
-Endpoints
+Routes
 
 There are 8 endpoints and it is always necessary to start with the validate to start the CONNETIONS list:
 1. /status -> return the status of the api
@@ -51,5 +51,5 @@ Then, you can run locally as developing enviroment with:
 
 API_PORT=5000 API_HOST=0.0.0.0 python3 -m api.v1.app
 
-In the browser you can consume the API with the following route:
-http://localhost:5000/api/v1/ + endpoint as explained above
+In the browser you can consume the API with the following:
+http://localhost:5000/api/v1/ + route as explained above
