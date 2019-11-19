@@ -9,12 +9,13 @@ import sys
 
 this = sys.modules[__name__]
 
-this.__CONECTIONS__ = []
+__CONNECTIONS__ = []
 
 @app_views.route("/validate/<username>", methods=['GET'])
 def validate_username(username):
     "validate the user name and save the publicId to conections"
-    this.__CONECTIONS__.clear()
+    __CONNECTIONS__.clear()
+    print(id(__CONNECTIONS__))
     url = 'https://bio.torre.co/api/people/{}/connections'.format(username)
     res = requests.get(url).json()
 
@@ -28,9 +29,10 @@ def validate_username(username):
                 "name": conect['person']['name'],
                 "publicId": conect['person']['publicId']
             }
-            __CONECTIONS__.append(info_conect)
+            __CONNECTIONS__.append(info_conect)
+        print(id(__CONNECTIONS__))
         info = {
             "username": bio_res['person']['name'],
-            "conections": __CONECTIONS__
+            "conections": __CONNECTIONS__
             }
         return jsonify(info), 200

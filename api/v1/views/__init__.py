@@ -12,3 +12,6 @@ from api.v1.views.validate import *
 from api.v1.views.language import *
 from api.v1.views.education import *
 from api.v1.views.strength import *
+from api.v1.views.location import *
+from api.v1.views.person import *
+from api.v1.views.clear import *
