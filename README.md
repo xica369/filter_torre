@@ -3,6 +3,7 @@ Filter Torre
 This project use the api of torre.co with this endpoints:
 
 GET https://torre.bio/api/bios/$username (gets bio information of $username)
+
 GET https://torre.bio/api/people/$username/connections?[q=$query&limit=$limit] (lists people sorted by connection degrees relative to $username)
 
 
